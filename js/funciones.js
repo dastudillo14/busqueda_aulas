@@ -23,7 +23,7 @@ function buscar(texto ,arreglo){
 	var mid = document.getElementById("datos");
 	for (var i = 2; i < curso.length ; i++) {
 		if (mate_doc[i].indexOf(texto)!= -1 || curso[i].indexOf(texto)!= -1) {
-			tabla +=  "<tr><td>"+dia.toUpperCase()+" </td><td>"+hora[i]+" </td> <td>"+mate_doc[i]+" </td><td>"+curso[i]+" </td><td> <a href='#'>"+lugar[i]+"</a> </td></tr>";		
+			tabla +=  "<tr><td>"+dia.toUpperCase()+" </td><td>"+hora[i]+" </td> <td>"+mate_doc[i]+" </td><td>"+curso[i]+" </td><td> <a href='lugares/"+lugar[i]+".PNG'>"+lugar[i]+"</a> </td></tr>";		
 		}
 	}
 	tabla += "</table> ";
