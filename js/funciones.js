@@ -26,10 +26,10 @@ function busqueda(){
 }
 
 function buscar(texto ,arreglo){
-	
-	var hora  = [], mate_doc  = [], curso  = [], lugar = [];
-	var tabla =" <table class='table table-hover'><tr style = 'color:Skyblue'><td>Dia</td><td>Hora</td><td>Materia-Docente</td><td>Curso</td><td>Lugar</td><tr>";
 	var mid = document.getElementById("datos");
+var tabla =" <table class='table table-hover'><tr style = 'color:Skyblue'><td>Dia</td><td>Hora</td><td>Materia-Docente</td><td>Curso</td><td>Lugar</td><tr>";
+	var hora  = [], mate_doc  = [], curso  = [], lugar = [];
+	
 	for (var j = 0; j <=arreglo.length-1; j++){
 		hora.push(arreglo[j][0]);
 		mate_doc.push(arreglo[j][1]);
