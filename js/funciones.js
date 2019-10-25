@@ -27,7 +27,7 @@ function busqueda(){
 
 function buscar(texto ,arreglo){
 	var mid = document.getElementById("datos");
-var tabla =" <table class='table table-hover'><tr style = 'color:Skyblue'><td>Dia</td><td>Hora</td><td>Materia-Docente</td><td>Curso</td><td>Lugar</td><tr>";
+var tabla =" <table class='table table-hover'><tr style = 'color:Skyblue'><td>Día</td><td>Hora</td><td>Materia-Docente</td><td>Curso</td><td>Ubicación</td><tr>";
 	var hora  = [], mate_doc  = [], curso  = [], lugar = [];
 	
 	for (var j = 0; j <=arreglo.length-1; j++){
@@ -47,7 +47,6 @@ var tabla =" <table class='table table-hover'><tr style = 'color:Skyblue'><td>Di
 //leer csv
 function leer(ruta){
 	ruta = 'horarios/'+dia.toUpperCase()+'.csv';
-	console.log("ruta222222:"+ruta)
 	fetch(ruta)
 	.then(res=> res.text())
 	.then(content=> {
