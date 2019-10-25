@@ -1,5 +1,20 @@
+//global var
+//iniciar cargando horario del lunes
+var dia = 'lunes', ruta = '';
+ruta = 'horarios/'+dia.toUpperCase()+'.csv';
+leer(ruta);
+var matriz = [];
+//
+//cambio de dia para cargar csv
+$("#dia").change(function(){
+	matriz=[];
+    dia = document.getElementById("dia").value;  
+    ruta = 'horarios/'+dia.toUpperCase()+'.csv';
+    leer(ruta);
+     });
+
 function busqueda(){
-	var texto = document.getElementById("caja").value;
+	var texto = document.getElementById("caja").value;	
 	var parametros = {
 		"texto":texto
 	};
@@ -9,18 +24,18 @@ function busqueda(){
 		type: "POST",	
 	});
 }
+
 function buscar(texto ,arreglo){
-	var dia = document.getElementById("lunes").value;
-	console.log(dia);
+	
 	var hora  = [], mate_doc  = [], curso  = [], lugar = [];
+	var tabla =" <table class='table table-hover'><tr style = 'color:Skyblue'><td>Dia</td><td>Hora</td><td>Materia-Docente</td><td>Curso</td><td>Lugar</td><tr>";
+	var mid = document.getElementById("datos");
 	for (var j = 0; j <=arreglo.length-1; j++){
 		hora.push(arreglo[j][0]);
 		mate_doc.push(arreglo[j][1]);
 		curso.push(arreglo[j][2]);
 		lugar.push(arreglo[j][3]);
 	}
-	var tabla =" <table class='table table-hover'><tr style = 'color:Skyblue'><td>Dia</td><td>Hora</td><td>Materia-Docente</td><td>Curso</td><td>Lugar</td><tr>";
-	var mid = document.getElementById("datos");
 	for (var i = 2; i < curso.length ; i++) {
 		if (mate_doc[i].indexOf(texto)!= -1 || curso[i].indexOf(texto)!= -1) {
 			tabla +=  "<tr><td>"+dia.toUpperCase()+" </td><td>"+hora[i]+" </td> <td>"+mate_doc[i]+" </td><td>"+curso[i]+" </td><td> <a href='lugares/"+lugar[i]+".PNG'>"+lugar[i]+"</a> </td></tr>";		
@@ -28,18 +43,21 @@ function buscar(texto ,arreglo){
 	}
 	tabla += "</table> ";
 	mid.innerHTML = tabla;
-
 }
 //leer csv
-var matriz = [];
-	fetch('nuevo.csv')
+function leer(ruta){
+	ruta = 'horarios/'+dia.toUpperCase()+'.csv';
+	console.log("ruta222222:"+ruta)
+	fetch(ruta)
 	.then(res=> res.text())
 	.then(content=> {
 	let lines = content.split(/\n/);
 	lines.forEach(line => matriz.push(line));
 		}
-	);
+	);	
 //fin
+}
+	
 
 function recorrer(matriz){
 	var nuevo = [];
