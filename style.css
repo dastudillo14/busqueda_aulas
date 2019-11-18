@@ -1,0 +1,39 @@
+.modalas-contenido{
+    background-color: transparent;
+    width:600px;
+    height: 500px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+}
+.modalDas{
+    background-color: transparent;
+    position:fixed;
+    margin-top: 10px;
+    top:0;
+    right:0;
+    bottom:00;
+    left:95;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+}
+#miModal:target{
+    opacity:1;
+    pointer-events:auto;
+}
+
+body{
+    background: #0f2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+
+}
+h3{
+    margin-top: 10px;
+}
+b{
+    color: white;
+}
+
+
