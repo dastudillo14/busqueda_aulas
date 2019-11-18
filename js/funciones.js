@@ -35,7 +35,8 @@ function busqueda(){
 	});	
 }
 
-function buscar(texto ,arreglo){	
+function buscar(texto ,arreglo){
+	console.log(texto)	
 	var mid = document.getElementById("datos");
 	var tabla ="<div data-spy='scroll' data-target='#list-example' data-offset='0 class='scrollspy-example'> <table class='table table-striped' > <thead class='thead-dark'> <tr ><th scope='col' >Día</th><th scope='col' >Hora</th><th scope='col'>Materia-Docente</th><th scope='col'>Curso</th><th scope='col'>Ubicación</th></tr></thead>";
 	var array_dia= [],hora  = [], mate_doc  = [], curso  = [], lugar = [];
@@ -49,9 +50,9 @@ function buscar(texto ,arreglo){
 	$(function (){
 		$("[data-toggle='popover']")
 		.popover({html:true})
-	});	
-	for (var i = 2; i < curso.length ; i++) {
-		if (mate_doc[i].indexOf(texto)!= -1 || curso[i].indexOf(texto)!= -1 || lugar[i].indexOf(texto)!= -1) {
+	});		
+	for (var i = 2; i < curso.length ; i++) {		
+		if (mate_doc[i].indexOf(texto)!=-1 || curso[i].indexOf(texto)!=-1 || lugar[i].indexOf(texto)!=-1) {	
 			var urlImagen = 'lugares/'+lugar[i];
 			var png = ".PNG' /> ";	
 			var imagen = "<img width='450px' height='450px'  src=' " +urlImagen+png;			
