@@ -41,6 +41,8 @@ b {
   color: white; }
 
 @media only screen and (max-width: 800px) {
+  .card-body {
+    padding: 0; }
   table {
     display: -ms-grid;
     display: grid;
