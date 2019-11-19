@@ -1,0 +1,92 @@
+.modalas-contenido {
+  background-color: transparent;
+  width: 600px;
+  height: 500px;
+  padding: 10px 20px;
+  margin: 20% auto;
+  position: relative; }
+
+.modalDas {
+  background-color: transparent;
+  position: fixed;
+  margin-top: 10px;
+  top: 0;
+  right: 0;
+  bottom: 00;
+  left: 95;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+
+#miModal:target {
+  opacity: 1;
+  pointer-events: auto; }
+
+body {
+  background: #0f2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
+  background: -webkit-linear-gradient(left, #0f2027, #203a43, #2c5364);
+  background: -o-linear-gradient(left, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); }
+
+h3 {
+  margin-top: 10px; }
+
+b {
+  color: white; }
+
+@media only screen and (max-width: 800px) {
+  .card-body {
+    padding: 0; }
+  table {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    position: relative;
+    /* border-top: 1px solid ; */ }
+  thead {
+    display: none; }
+  tbody {
+    height: auto; }
+  tfoot {
+    height: auto;
+    -ms-grid-row: 1;
+    grid-row-start: 1; }
+    tfoot tr th {
+      position: relative;
+      display: block;
+      border-right: 0 none; }
+  tr {
+    display: -ms-grid;
+    display: grid;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.35); }
+  tbody tr:nth-child(odd) {
+    background: #fff; }
+  tbody tr:nth-child(even) {
+    background: #2B5162;
+    color: #fff; }
+  td {
+    position: relative;
+    display: block;
+    padding: .4rem .5rem .4rem 40% !important;
+    border-right: 0 none; }
+  td:before {
+    content: attr(data-campo);
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 37%;
+    padding-left: .5rem;
+    line-height: 1.8;
+    max-width: 37%;
+    white-space: pre-wrap; }
+  td:nth-child(even) {
+    background: rgba(0, 0, 0, 0.2); } }
